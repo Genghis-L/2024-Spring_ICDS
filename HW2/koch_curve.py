@@ -70,9 +70,7 @@ if __name__ == "__main__":
     p2 = (100, 0)
     n_max = 3
     coordinates = koch_curve(p1, p2, 0, n_max)
-    print(coordinates)
-    print(len(coordinates))
-
+    
     # Uncomment the following statements
     # They will plot the koch curve
     x = [c[0] for c in coordinates]
