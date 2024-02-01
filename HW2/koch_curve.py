@@ -45,17 +45,24 @@ def get_t_coordinates(p1, p2):
 
 def koch_curve(p1, p2, n, n_max):
     '''it returns a list of coordinates (x, y)'''
-    if n_max == n:
-        return [p1, p2]
 
     s = get_s_coordinates(p1, p2)
     t = get_t_coordinates(p1, p2)
     u = get_u_coordinates(s, t)
 
-    lst = koch_curve(p1, s, n, n_max-1) + koch_curve(s, u, n, n_max-1)[1:] + \
-        koch_curve(u, t, n, n_max-1)[1:] + koch_curve(t, p2, n, n_max-1)[1:]
-
-    return lst
+    if n_max == n:
+        return [p1, p2]
+    elif n_max == n+1:
+        return [p1, s, u, t, p2]
+    elif n_max == n+2:
+        lst = koch_curve(p1, s, n, n_max-1) + koch_curve(s, u, n, n_max-1) + \
+            koch_curve(u, t, n, n_max-1) + koch_curve(t, p2, n, n_max-1)
+        return lst
+    else:
+        lst = koch_curve(p1, s, n, n_max-1) + koch_curve(s, u, n, n_max-1) + \
+            koch_curve(u, t, n, n_max-1) + \
+            koch_curve(t, p2, n, n_max-1)
+        return lst
 
 
 if __name__ == "__main__":
@@ -63,6 +70,8 @@ if __name__ == "__main__":
     p2 = (100, 0)
     n_max = 3
     coordinates = koch_curve(p1, p2, 0, n_max)
+    print(coordinates)
+    print(len(coordinates))
 
     # Uncomment the following statements
     # They will plot the koch curve
