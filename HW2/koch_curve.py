@@ -52,16 +52,10 @@ def koch_curve(p1, p2, n, n_max):
 
     if n_max == n:
         return [p1, p2]
-    elif n_max == n+1:
-        return [p1, s, u, t, p2]
-    elif n_max == n+2:
-        lst = koch_curve(p1, s, n, n_max-1) + koch_curve(s, u, n, n_max-1) + \
-            koch_curve(u, t, n, n_max-1) + koch_curve(t, p2, n, n_max-1)
-        return lst
     else:
-        lst = koch_curve(p1, s, n, n_max-1) + koch_curve(s, u, n, n_max-1) + \
-            koch_curve(u, t, n, n_max-1) + \
-            koch_curve(t, p2, n, n_max-1)
+        lst = koch_curve(p1, s, n, n_max-1) + koch_curve(s, u, n, n_max-1)[1:] + \
+            koch_curve(u, t, n, n_max-1)[1:] + \
+            koch_curve(t, p2, n, n_max-1)[1:]
         return lst
 
 
