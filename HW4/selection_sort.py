@@ -5,8 +5,7 @@ Created on Fri Feb 16 15:15:18 2024
 
 @author: bing
 """
-import timeit
-
+# import timeit
 
 def selection_sort(lst):
     # lst is a list of N numbers.
@@ -19,15 +18,15 @@ def selection_sort(lst):
 
 
 if __name__ == "__main__":
-    start = timeit.default_timer()
+    # start = timeit.default_timer()
 
     lst = [10, 9, 5, 6, 8, 3, 2, 1, 4, 7]
     selection_sort(lst)
     print(lst)
 
-    stop = timeit.default_timer()
+    # stop = timeit.default_timer()
 
-    print("Time for Selection Sort:",stop-start)
+    # print("Time for Selection Sort:",stop-start)
 
     lst = [0, 1, 2, 3]
     selection_sort(lst)

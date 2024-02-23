@@ -5,7 +5,7 @@ Created on Fri Feb 16 15:06:22 2024
 
 @author: bing
 """
-import timeit
+# import timeit
 
 def insertion_sort_with_gap(lst, g):
     # lst is a list of N numbers, and g is the gap
@@ -26,15 +26,15 @@ def shell_sort(lst):
 
 
 if __name__ == "__main__":
-    start = timeit.default_timer()
-    
+    # start = timeit.default_timer()
+
     lst = [10, 9, 5, 6, 8, 3, 2, 1, 4, 7]
     shell_sort(lst)
     print(lst)
-    
-    stop = timeit.default_timer()
-    
-    print("Time for Shell Sort:",stop-start)
+
+    # stop = timeit.default_timer()
+
+    # print("Time for Shell Sort:", stop-start)
 
     lst = [0, 1, 2, 3]
     shell_sort(lst)
