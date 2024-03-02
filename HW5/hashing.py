@@ -42,7 +42,9 @@ class Contacts:
         # insert your code here
 
         index = int_key % self.numBuckets
-        return self.buckets[index][0][1]
+        for i in range(len(self.buckets[index])):
+            if self.buckets[index][i][0] == name:
+                return self.buckets[index][i][1]
 
 
 # no need to modify the following code
