@@ -13,7 +13,7 @@ S_TALKING = 1
 #   - An array of items, each a Member class
 #   - A dictionary that keeps who is a chat group
 # member functions:
-#    - join: first delay_accumulator in
+#    - join: first time in
 #    - leave: leave the system, and the group
 #    - list_my_peers: who is in chatting with me?
 #    - list_all: who is in the system, and the chat groups

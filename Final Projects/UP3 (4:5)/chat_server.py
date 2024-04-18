@@ -175,7 +175,8 @@ class Server:
 
                 # IMPLEMENTATION
                 # ---- start your code ---- #
-                poem = '\n'.join(self.sonnet.get_poem(int(msg["target"])).strip())
+                poem = '\n'.join(self.sonnet.get_poem(
+                    int(msg["target"])).strip())
                 print('here:\n', poem)
                 # ---- end of your code --- #
 
